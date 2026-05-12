@@ -1,0 +1,27 @@
+.Button
+{
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    margin-bottom: 50px;
+    background-color: rgb(107, 228, 107);
+}
+
+#Stats
+{
+    position: absolute;
+    margin-left:78%;
+    border: 2px black solid;
+    width:150px;
+    height: auto;
+    font-size: larger;
+    background-color: rgb(155, 206, 236);
+}
+
+.center
+{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
