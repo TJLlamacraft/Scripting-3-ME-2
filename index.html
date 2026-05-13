@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Scripting 3_ME 2</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="Css/styles.css">
     </head>
     <body>
         <div id="Stats" class="center">
+            <h3 class="Heading3">Stats</h3>
             <p>
                 Wood: 0
                 <br>
@@ -20,10 +21,20 @@
                 Iron: 0
             </p>
         </div>
-        <div><button class="Button" id="WoodButton"> Wood <br> Cost: Free</button></div> 
-        <div><button class="Button" id="StoneButton"> Stone <br> Cost: 3 Wood</button></div>
-        <div><button class="Button" id="CharcoalButton"> Charcoal <br> Cost: 1 Wood, 4 Stone</button></div>
-        <div><button class="Button" id="IronButton"> Iron <br> Cost: 4 Stone, 2 Charcoal</button></div>
+        <div id="Crafting">
+            <h3 class="Heading3">Crafting</h3>
+            <br>
+            <button class="craftingButton" id="WoodAxeButton">Wood Axe</button> <!--Makes wood auto-->
+            <button class="craftingButton" id="WoodPickaxeButton">Wood Pickaxe</button> <!--Makes Stone auto-->
+            <button class="craftingButton" id="StoneAxeButton">Stone Axe</button> <!--Collects faster-->
+            <button class="craftingButton" id="StonePickaxeButton">Stone Pickaxe</button> <!--Collects faster-->
+        </div>
+        <div><button class="MaterialButton" id="WoodButton"> Wood <br> Cost: Free</button></div> 
+        <div><button class="MaterialButton" id="StoneButton"> Stone <br> Cost: 3 Wood</button></div>
+        <div><button class="MaterialButton" id="CharcoalButton"> Charcoal <br> Cost: 1 Wood, 4 Stone</button></div>
+        <div><button class="MaterialButton" id="IronButton"> Iron <br> Cost: 4 Stone, 2 Charcoal</button></div>
+
+        
 
         <script src="JS/script.js" async defer></script>
     </body>

@@ -1,4 +1,4 @@
-//Variables
+//#region Variables
 let woodButton = document.getElementById("WoodButton");
 let stoneButton = document.getElementById("StoneButton");
 let charcoalButton = document.getElementById("CharcoalButton");
@@ -10,6 +10,19 @@ let currentStone = 0;
 let currentCharcoal = 0;
 let currentIron = 0;
 
+let woodAxeButton = document.getElementById("WoodAxeButton");
+let woodPickaxeButton = document.getElementById("WoodPickaxeButton");
+let stoneAxeButton = document.getElementById("StoneAxeButton");
+let stonePickaxeButton = document.getElementById("StonePickaxeButton");
+
+let hasWoodAxe = false;
+let hasWoodPickaxe = false;
+let hasStoneAxe = false;
+let hasStonePickaxe = false;
+
+//#endregion
+
+//#region Functions
 function clickWood() {
   if (currentWood >= 0) {
     currentWood += 1;
@@ -49,46 +62,41 @@ function clickIron() {
   setStats();
 }
 
+function setStats() {
+  statsBlock.innerHTML = `<h3 class="Heading3">Stats</h3> <p>Wood: ${currentWood} <br>Stone: ${currentStone} <br>Charcoal: ${currentCharcoal} <br>Iron: ${currentIron} </p> `;
+}
+
+function update() {
+  if (currentWood >= 3) {
+    stoneButton.style.backgroundColor = "rgb(107, 228, 107)";
+  } else {
+    stoneButton.style.backgroundColor = "rgb(233, 99, 75)";
+  }
+
+  if (currentWood >= 1 && currentStone >= 4) {
+    charcoalButton.style.backgroundColor = "rgb(107, 228, 107)";
+  } else {
+    charcoalButton.style.backgroundColor = "rgb(233, 99, 75)";
+  }
+
+  if (currentCharcoal >= 2 && currentStone >= 4) {
+    ironButton.style.backgroundColor = "rgb(107, 228, 107)";
+  } else {
+    ironButton.style.backgroundColor = "rgb(233, 99, 75)";
+  }
+}
+
+function clickWoodAxe() {
+
+}
+//#endregion
+
 woodButton.addEventListener("click", clickWood);
 stoneButton.addEventListener("click", clickStone);
 charcoalButton.addEventListener("click", clickCharcoal);
 ironButton.addEventListener("click", clickIron);
 
-function setStats() {
-  statsBlock.innerHTML = `<p>Wood: ${currentWood} <br>Stone: ${currentStone} <br>Charcoal: ${currentCharcoal} <br>Iron: ${currentIron} </p> `;
-}
-
-function update()
-{
-    if (currentWood >= 3)
-    {
-        stoneButton.style.backgroundColor = "rgb(107, 228, 107)";
-    }
-    else
-    {
-        stoneButton.style.backgroundColor = "rgb(233, 99, 75)";
-    }
-
-    if (currentWood >= 1 && currentStone >= 4)
-    {
-        charcoalButton.style.backgroundColor = "rgb(107, 228, 107)";
-    }
-    else
-    {
-        charcoalButton.style.backgroundColor = "rgb(233, 99, 75)";
-    }
-
-    if (currentCharcoal >= 2 && currentStone >= 4)
-    {
-        ironButton.style.backgroundColor = "rgb(107, 228, 107)";
-    }
-    else
-    {
-        ironButton.style.backgroundColor = "rgb(233, 99, 75)";
-    }
-}
-
 setStats();
+update();
 
 document.addEventListener("click", update);
-
